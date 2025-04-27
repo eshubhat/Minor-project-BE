@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import Exam from "../../DB/exam.js";
 import StudentExamSubmission from "../../DB/SubmitExam.js";
 
+// Fetch Exam Questions
 export const FetchExamQuestions = async (req, res) => {
   try {
     const { examId } = req.params;
@@ -11,32 +12,27 @@ export const FetchExamQuestions = async (req, res) => {
     }
 
     const examDetail = await Exam.findById(examId);
-
     if (!examDetail) {
       return res.status(404).json({ message: "Exam not found" });
     }
 
-    return res.status(200).json({ message: "Exam Fetched", examDetail });
+    return res.status(200).json({ message: "Exam fetched successfully", examDetail });
   } catch (error) {
-    console.error("Error in FetchExamQuestions:", error);
+    console.error("FetchExamQuestions Error:", error);
     return res.status(500).json({ message: "Internal Server Error", error });
   }
 };
 
+// Submit Exam (Automated scoring)
 export const SubmitExam = async (req, res) => {
   try {
     const { examId } = req.params;
     const { studentId, answers } = req.body;
-    // const studentId = studentid;
-
-    console.log(examId, studentId, typeof answers);
 
     if (!studentId || !examId || !Array.isArray(answers)) {
-      console.log(studentId, examId, answers);
       return res.status(400).json({ message: "Invalid request body" });
     }
 
-    // Fetch the exam
     const exam = await Exam.findById(examId);
     if (!exam) {
       return res.status(404).json({ message: "Exam not found" });
@@ -44,14 +40,10 @@ export const SubmitExam = async (req, res) => {
 
     const questions = exam.questions;
 
-    // Validate answer count
     if (questions.length !== answers.length) {
-      return res.status(400).json({
-        message: "Number of answers doesn't match number of questions",
-      });
+      return res.status(400).json({ message: "Number of answers doesn't match number of questions" });
     }
 
-    // Calculate score
     let correctCount = 0;
     const answerDetail = questions.map((question, index) => {
       const isCorrect = question.correctOption === answers[index];
@@ -64,20 +56,6 @@ export const SubmitExam = async (req, res) => {
       };
     });
 
-    console.log(
-      "studentId: ",
-      studentId,
-      "examId: ",
-      examId,
-      "answers: ",
-      answerDetail,
-      "score: ",
-      correctCount,
-      "totalQuestions: ",
-      questions.length
-    );
-
-    // Save submission
     const submission = new StudentExamSubmission({
       studentId,
       examId,
@@ -88,8 +66,6 @@ export const SubmitExam = async (req, res) => {
 
     await submission.save();
 
-    console.log("submissions submitted");
-
     return res.status(201).json({
       message: "Exam submitted successfully",
       result: {
@@ -99,6 +75,35 @@ export const SubmitExam = async (req, res) => {
     });
   } catch (error) {
     console.error("SubmitExam Error:", error);
+    return res.status(500).json({ message: "Internal Server Error", error });
+  }
+};
+
+// Update Score Manually (User-friendly for examiners)
+export const UpdateStudentScore = async (req, res) => {
+  try {
+    const { submissionId } = req.params;
+    const { newScore } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(submissionId)) {
+      return res.status(400).json({ message: "Invalid submission ID" });
+    }
+
+    if (typeof newScore !== "number" || newScore < 0) {
+      return res.status(400).json({ message: "Invalid score" });
+    }
+
+    const submission = await StudentExamSubmission.findById(submissionId);
+    if (!submission) {
+      return res.status(404).json({ message: "Submission not found" });
+    }
+
+    submission.score = newScore;
+    await submission.save();
+
+    return res.status(200).json({ message: "Score updated successfully", updatedSubmission: submission });
+  } catch (error) {
+    console.error("UpdateStudentScore Error:", error);
     return res.status(500).json({ message: "Internal Server Error", error });
   }
 };

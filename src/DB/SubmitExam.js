@@ -1,33 +1,17 @@
 import mongoose from "mongoose";
 
 const answerSchema = new mongoose.Schema({
-  question: {
-    type: String,
-    required: true,
-  },
-  selectedOption: {
-    type: Number,
-    required: true,
-    min: 0,
-    max: 3,
-  },
-  correctOption: {
-    type: Number,
-    required: true,
-    min: 0,
-    max: 3,
-  },
-  isCorrect: {
-    type: Boolean,
-    required: true,
-  },
+  question: { type: String, required: true },
+  selectedOption: { type: Number, required: true, min: 0, max: 3 },
+  correctOption: { type: Number, required: true, min: 0, max: 3 },
+  isCorrect: { type: Boolean, required: true },
 });
 
 const studentExamSubmissionSchema = new mongoose.Schema(
   {
     studentId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Student", // Assuming there's a Student model
+      ref: "Student",
       required: true,
     },
     examId: {
@@ -48,7 +32,8 @@ const studentExamSubmissionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const StudentExamSubmission = mongoose.model(
+// 🛠️ Fix: Check if model exists already
+const StudentExamSubmission = mongoose.models.StudentExamSubmission || mongoose.model(
   "StudentExamSubmission",
   studentExamSubmissionSchema
 );

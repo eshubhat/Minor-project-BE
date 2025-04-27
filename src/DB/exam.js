@@ -1,70 +1,24 @@
 import mongoose from "mongoose";
 
-// Schema for a single question
-const questionSchema = new mongoose.Schema({
-  question: {
-    type: String,
-    required: true,
-  },
-  options: {
-    type: [String],
-    validate: [arrayLimit, "{PATH} must have exactly 4 options"],
-    required: true,
-  },
-  correctOption: {
-    type: Number,
-    required: true,
-    min: 0,
-    max: 3,
-  },
-  examDate: {
-    type: Date,
-    default: Date.now,
-  },
+const answerSchema = new mongoose.Schema({
+  question: { type: String, required: true },
+  selectedOption: { type: Number, required: true, min: 0, max: 3 },
+  correctOption: { type: Number, required: true, min: 0, max: 3 },
+  isCorrect: { type: Boolean, required: true },
 });
 
-// Validate options array length
-function arrayLimit(val) {
-  return val.length === 4;
-}
-
-// Schema for an exam
-const examSchema = new mongoose.Schema(
+const studentExamSubmissionSchema = new mongoose.Schema(
   {
-    title: {
-      type: String,
-      required: true,
-    },
-    questions: [questionSchema],
-    teacher: {
-      type: String,
-      default: "teacher1",
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-    examDate: {
-      type: Date,
-      default: Date.now,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    passScore: {
-      type: Number,
-      default: 35,
-    },
-    duration: {
-      type: Number,
-      default: 60
-    }
+    studentId: { type: mongoose.Schema.Types.ObjectId, ref: "Student", required: true },
+    examId: { type: mongoose.Schema.Types.ObjectId, ref: "Exam", required: true },
+    answers: [answerSchema],
+    score: { type: Number, default: 0 },
+    totalQuestions: { type: Number, required: true },
+    submittedAt: { type: Date, default: Date.now },
   },
   { timestamps: true }
 );
 
-// Model
-const Exam = mongoose.model("Exam", examSchema);
+const StudentExamSubmission = mongoose.model("StudentExamSubmission", studentExamSubmissionSchema);
 
-export default Exam;
+export default StudentExamSubmission;
