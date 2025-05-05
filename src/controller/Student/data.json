@@ -1,0 +1,995 @@
+{
+    "questions": [
+      {
+        "question": "What is the maximum allowed altitude for micro drone flight without special permission?",
+        "options": [
+          "60 meters",
+          "120 meters",
+          "400 meters",
+          "500 meters"
+        ],
+        "correctOption": 2,
+        "type": "micro"
+      },
+      {
+        "question": "Which of the following is required before operating a micro drone?",
+        "options": [
+          "Pilot license",
+          "Flight plan",
+          "Battery check",
+          "Airworthiness certificate"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What is the maximum weight for a drone to be considered 'micro'?",
+        "options": [
+          "0.5 kg",
+          "1 kg",
+          "2 kg",
+          "5 kg"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What should a drone pilot ensure before flight?",
+        "options": [
+          "Confirm drone's battery level",
+          "Check weather conditions",
+          "Verify airspace restrictions",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "micro"
+      },
+      {
+        "question": "In which of the following areas can micro drones be flown without special clearance?",
+        "options": [
+          "Urban zones",
+          "Controlled airspace",
+          "Remote areas",
+          "Over crowds"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What is required for micro drone operations in controlled airspace?",
+        "options": [
+          "Special permission",
+          "Pilot license",
+          "Only flight plan",
+          "No additional requirements"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "Which of the following is a potential hazard for micro drone operations?",
+        "options": [
+          "High winds",
+          "Low battery",
+          "Flying in rain",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "micro"
+      },
+      {
+        "question": "What should a pilot do if the drone goes beyond visual line of sight (BVLOS)?",
+        "options": [
+          "Continue the flight and land safely",
+          "Contact air traffic control",
+          "Return to a safe area immediately",
+          "Use the GPS to navigate back"
+        ],
+        "correctOption": 2,
+        "type": "micro"
+      },
+      {
+        "question": "What is the most common use case for micro drones?",
+        "options": [
+          "Commercial surveillance",
+          "Agricultural monitoring",
+          "Recreational purposes",
+          "Heavy lifting"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "Which of the following is NOT required before flying a micro drone?",
+        "options": [
+          "Checking the weather forecast",
+          "Battery inspection",
+          "Contacting air traffic control",
+          "Ensuring proper visual line of sight"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What should a drone operator do in the event of an emergency landing?",
+        "options": [
+          "Contact air traffic control immediately",
+          "Perform an emergency shutdown",
+          "Ensure the drone is within visual line of sight",
+          "Look for a safe and open landing space"
+        ],
+        "correctOption": 4,
+        "type": "micro"
+      },
+      {
+        "question": "Which of the following is NOT a common feature in micro drones?",
+        "options": [
+          "GPS stabilization",
+          "Automatic return to home",
+          "Extended battery life",
+          "Collision avoidance sensors"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "How should a drone operator handle a flyaway situation?",
+        "options": [
+          "Continue flying until control is restored",
+          "Attempt to manually control the drone back to the operator",
+          "Let the drone fly and follow it",
+          "Contact emergency services"
+        ],
+        "correctOption": 2,
+        "type": "micro"
+      },
+      {
+        "question": "What is the maximum allowed operating range for a micro drone?",
+        "options": [
+          "1 km",
+          "5 km",
+          "10 km",
+          "50 km"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "Which feature is commonly used for controlling a micro drone?",
+        "options": [
+          "Remote control transmitter",
+          "Touchscreen mobile app",
+          "Voice commands",
+          "Both A and B"
+        ],
+        "correctOption": 4,
+        "type": "micro"
+      },
+      {
+        "question": "Which type of battery is commonly used in micro drones?",
+        "options": [
+          "Lithium-ion (Li-ion)",
+          "Nickel-metal hydride (NiMH)",
+          "Lithium polymer (LiPo)",
+          "Alkaline"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What is a common risk when flying micro drones in urban areas?",
+        "options": [
+          "Interference with other drones",
+          "Risk of collision with birds",
+          "Restricted airspace violations",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "micro"
+      },
+      {
+        "question": "Which of the following is NOT a legal requirement for flying a micro drone?",
+        "options": [
+          "Registration with the FAA",
+          "Ensuring the drone remains within visual line of sight",
+          "Using a drone with a camera",
+          "Checking weather conditions"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What is the ideal wind speed for flying micro drones?",
+        "options": [
+          "Up to 5 m/s",
+          "5-10 m/s",
+          "10-15 m/s",
+          "15-20 m/s"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "What should a pilot do if the drone's battery is low during a flight?",
+        "options": [
+          "Continue the flight until the battery dies",
+          "Immediately land the drone safely",
+          "Switch to manual control",
+          "Try to fly longer by reducing altitude"
+        ],
+        "correctOption": 2,
+        "type": "micro"
+      },
+      {
+        "question": "What is the primary risk when flying micro drones near airports?",
+        "options": [
+          "Air traffic congestion",
+          "GPS interference",
+          "Restricted airspace violations",
+          "Increased battery consumption"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What feature is commonly used to help micro drones return to their starting point?",
+        "options": [
+          "Return-to-home (RTH) function",
+          "Follow-me mode",
+          "Auto-pilot mode",
+          "Hovering at altitude"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "How far should micro drones stay from people when flying?",
+        "options": [
+          "5 meters",
+          "10 meters",
+          "30 meters",
+          "50 meters"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What is the main advantage of using a micro drone for personal use?",
+        "options": [
+          "Low cost and portability",
+          "Heavy lifting capacity",
+          "Long battery life",
+          "High-speed capabilities"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "What should you do if a micro drone loses connection with the remote control?",
+        "options": [
+          "Continue flying until battery drains",
+          "Activate the return-to-home function",
+          "Attempt to regain signal immediately",
+          "Land the drone manually"
+        ],
+        "correctOption": 2,
+        "type": "micro"
+      },
+      {
+        "question": "What is one of the key regulations when flying micro drones in urban areas?",
+        "options": [
+          "Always fly below 100 meters",
+          "Never fly within 5 km of airports",
+          "Maintain visual line of sight at all times",
+          "Use advanced navigation systems"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What is the most common use for micro drones in the commercial sector?",
+        "options": [
+          "Delivery services",
+          "Surveying and mapping",
+          "Cinematography and media production",
+          "Large-scale agricultural monitoring"
+        ],
+        "correctOption": 3,
+        "type": "micro"
+      },
+      {
+        "question": "What type of airspace is typically off-limits for micro drone flights?",
+        "options": [
+          "Restricted airspace",
+          "Uncontrolled airspace",
+          "Class G airspace",
+          "Low-altitude airspace"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "What should you check regularly for safe operation of a micro drone?",
+        "options": [
+          "The battery and propellers",
+          "The GPS signal strength",
+          "The firmware version",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "micro"
+      },
+      {
+        "question": "When is it legal to fly a micro drone at night?",
+        "options": [
+          "With a visual observer",
+          "Only during full moon",
+          "With a night flight certification",
+          "It is never legal to fly at night"
+        ],
+        "correctOption": 1,
+        "type": "micro"
+      },
+      {
+        "question": "What must a small drone operator do before flying?",
+        "options": [
+          "Ensure GPS signal strength",
+          "Obtain ATC clearance",
+          "Check battery and weather conditions",
+          "Perform a security scan of the area"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "What is the maximum flight altitude for small drones without special permission?",
+        "options": [
+          "100 meters",
+          "120 meters",
+          "200 meters",
+          "400 meters"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "What is the weight limit for a drone to be classified as \"small\"?",
+        "options": [
+          "5 kg",
+          "10 kg",
+          "25 kg",
+          "50 kg"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "Which of the following is required for flying a small drone in controlled airspace?",
+        "options": [
+          "ATC clearance",
+          "Battery check",
+          "Visual line of sight",
+          "Pilot's license"
+        ],
+        "correctOption": 1,
+        "type": "small"
+      },
+      {
+        "question": "When flying a small drone, the pilot must maintain a distance of at least ___ from people.",
+        "options": [
+          "5 meters",
+          "10 meters",
+          "30 meters",
+          "50 meters"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "What document must a small drone operator have to fly commercially?",
+        "options": [
+          "Airworthiness certificate",
+          "Remote Pilot Certificate",
+          "Drone insurance",
+          "Flight plan"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "For a small drone, which of the following pre-flight checks is most important?",
+        "options": [
+          "Confirming signal strength",
+          "Verifying GPS coordinates",
+          "Inspecting the propellers",
+          "Reading the user manual"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "What is the primary use of small drones in the commercial sector?",
+        "options": [
+          "Surveying and mapping",
+          "Rescue operations",
+          "Photography and cinematography",
+          "Delivery services"
+        ],
+        "correctOption": 1,
+        "type": "small"
+      },
+      {
+        "question": "How often should small drone batteries be checked for wear?",
+        "options": [
+          "After every flight",
+          "Once every month",
+          "Every 5 flights",
+          "Every 6 months"
+        ],
+        "correctOption": 1,
+        "type": "small"
+      },
+      {
+        "question": "Which airspace is generally prohibited for small drones?",
+        "options": [
+          "Controlled airspace",
+          "Uncontrolled airspace",
+          "Class A airspace",
+          "Restricted airspace"
+        ],
+        "correctOption": 4,
+        "type": "small"
+      },
+      {
+        "question": "What must a small drone operator do if they wish to fly in a controlled airspace?",
+        "options": [
+          "File a flight plan",
+          "Apply for airspace permission",
+          "Verify their drone’s weight",
+          "Only check weather conditions"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "What is the most common application for small drones?",
+        "options": [
+          "Aerial photography",
+          "Package delivery",
+          "Surveillance and monitoring",
+          "Agricultural surveys"
+        ],
+        "correctOption": 1,
+        "type": "small"
+      },
+      {
+        "question": "Which is a restriction for flying a small drone near airports?",
+        "options": [
+          "Always fly below 100 meters",
+          "You cannot fly within a 5 km radius of airports",
+          "Only fly during the day",
+          "Fly at least 10 km away from the airport"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "Which of the following is required before performing a commercial drone operation with a small drone?",
+        "options": [
+          "FAA Part 107 certificate",
+          "Only a drone registration",
+          "Visual line of sight waiver",
+          "Special permission for flying at night"
+        ],
+        "correctOption": 1,
+        "type": "small"
+      },
+      {
+        "question": "What is the minimum visibility requirement for small drone operations?",
+        "options": [
+          "1 mile",
+          "2 miles",
+          "3 miles",
+          "5 miles"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "What is the maximum speed a small drone can legally fly?",
+        "options": [
+          "50 mph",
+          "75 mph",
+          "100 mph",
+          "200 mph"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "What should a drone pilot do if they lose GPS signal during flight?",
+        "options": [
+          "Immediately land the drone",
+          "Continue flying manually",
+          "Switch to automatic mode",
+          "Wait for signal restoration"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "Which is NOT a good practice when operating small drones in windy conditions?",
+        "options": [
+          "Fly at low altitudes",
+          "Avoid flying during gusty winds",
+          "Use automatic flight modes",
+          "Reduce drone weight by removing payload"
+        ],
+        "correctOption": 4,
+        "type": "small"
+      },
+      {
+        "question": "What should be done if a drone loses communication with the remote control?",
+        "options": [
+          "Return to home function should be activated",
+          "Wait for communication to be restored",
+          "Immediately attempt a manual control reset",
+          "Continue flying until the battery is depleted"
+        ],
+        "correctOption": 1,
+        "type": "small"
+      },
+      {
+        "question": "Which of the following is an acceptable operating environment for small drones?",
+        "options": [
+          "Dense forests",
+          "Busy urban areas",
+          "Remote, open areas",
+          "Over large crowds"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "What is the primary advantage of flying a small drone for commercial purposes?",
+        "options": [
+          "Higher payload capacity",
+          "Faster flight speeds",
+          "Longer flight time",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "small"
+      },
+      {
+        "question": "Which of the following is true for small drones in urban environments?",
+        "options": [
+          "They are prohibited from flying above 100 meters",
+          "They require prior approval for any flight in restricted airspace",
+          "They are restricted to rural areas only",
+          "They must be equipped with advanced radar systems"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "What is the maximum weight for a small drone under FAA regulations?",
+        "options": [
+          "10 kg",
+          "25 kg",
+          "50 kg",
+          "100 kg"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "What is the recommended action if a small drone is caught in heavy wind?",
+        "options": [
+          "Increase altitude to avoid turbulence",
+          "Reduce speed and descend to lower altitude",
+          "Continue flying as normal",
+          "Land immediately"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "Which of the following is required for operating small drones for commercial photography?",
+        "options": [
+          "Drone insurance",
+          "A valid pilot's license",
+          "Permission for commercial use",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "small"
+      },
+      {
+        "question": "How can a small drone operator ensure flight safety near crowds?",
+        "options": [
+          "Use a high-definition camera",
+          "Fly at lower altitudes",
+          "Ensure the drone is equipped with collision sensors",
+          "Avoid flying in urban areas"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "What must be kept updated for legal commercial drone operations?",
+        "options": [
+          "Drone firmware",
+          "Remote pilot certification",
+          "The operator’s health insurance",
+          "Weather conditions"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "Which of the following is the maximum legal flying height for small drones?",
+        "options": [
+          "200 meters",
+          "250 meters",
+          "400 meters",
+          "500 meters"
+        ],
+        "correctOption": 3,
+        "type": "small"
+      },
+      {
+        "question": "What is the best way to avoid airspace violations while operating a small drone?",
+        "options": [
+          "Always monitor nearby drone activity",
+          "Use an airspace planning tool or app",
+          "Keep drone at a low altitude",
+          "Only fly in rural areas"
+        ],
+        "correctOption": 2,
+        "type": "small"
+      },
+      {
+        "question": "Which condition should be checked regularly for small drones before flight?",
+        "options": [
+          "Propeller condition",
+          "Weather conditions",
+          "Battery charge",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "small"
+      },
+      {
+        "question": "What is required for medium drone operations under commercial use?",
+        "options": [
+          "Special flight permissions",
+          "Operator license",
+          "Airworthiness certificate",
+          "Only drone registration"
+        ],
+        "correctOption": 3,
+        "type": "medium"
+      },
+      {
+        "question": "What is the weight limit for a drone to be classified as \"medium\"?",
+        "options": [
+          "10 kg",
+          "25 kg",
+          "50 kg",
+          "150 kg"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "In which area should medium drones avoid flying without special permission?",
+        "options": [
+          "Over water bodies",
+          "Over national parks",
+          "Over congested urban areas",
+          "Over remote fields"
+        ],
+        "correctOption": 3,
+        "type": "medium"
+      },
+      {
+        "question": "What must a medium drone operator possess to legally operate in controlled airspace?",
+        "options": [
+          "A flight plan",
+          "Air traffic control (ATC) approval",
+          "A flight log",
+          "Only registration"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "For medium drones, what is the maximum allowable flight altitude without special permission?",
+        "options": [
+          "300 meters",
+          "400 meters",
+          "500 meters",
+          "600 meters"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What is the typical use of medium drones in the commercial industry?",
+        "options": [
+          "Crop dusting",
+          "Cargo delivery",
+          "High-definition aerial photography",
+          "Search and rescue operations"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "Which of the following certifications is required for operating a medium drone commercially?",
+        "options": [
+          "Commercial drone certificate",
+          "Remote Pilot Certificate",
+          "Only registration",
+          "Airworthiness certificate"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "What should a medium drone pilot do if there is a loss of communication during flight?",
+        "options": [
+          "Land immediately",
+          "Switch to autopilot",
+          "Attempt to return to home base",
+          "Continue flying until signal is restored"
+        ],
+        "correctOption": 3,
+        "type": "medium"
+      },
+      {
+        "question": "What pre-flight check is essential for medium drone operations?",
+        "options": [
+          "Checking battery life",
+          "Ensuring correct software updates",
+          "Inspecting payload attachments",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "In what type of environment are medium drones most commonly used?",
+        "options": [
+          "Urban environments for surveillance",
+          "Remote locations for logistics operations",
+          "Airports for security checks",
+          "Agricultural fields for monitoring"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What is a critical safety check before operating a medium drone?",
+        "options": [
+          "Ensuring the GPS system is calibrated",
+          "Checking propeller blades for damage",
+          "Ensuring proper communication with the remote control",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "What is the maximum allowed flight altitude for medium drones without special clearance?",
+        "options": [
+          "300 meters",
+          "400 meters",
+          "500 meters",
+          "600 meters"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "In which scenario would a medium drone operator need an FAA waiver?",
+        "options": [
+          "To fly above 400 feet",
+          "To operate at night",
+          "To fly in restricted airspace",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "What is required for medium drone operators to fly commercially?",
+        "options": [
+          "Remote Pilot Certificate",
+          "Airworthiness certificate",
+          "Drone registration",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "What is the most common use case for medium drones?",
+        "options": [
+          "Search and rescue operations",
+          "Aerial photography",
+          "High-altitude environmental monitoring",
+          "Heavy-lift cargo transport"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "What should be the first step in a pre-flight check for medium drones?",
+        "options": [
+          "Inspecting the camera",
+          "Checking the flight software updates",
+          "Verifying battery charge",
+          "All of the above"
+        ],
+        "correctOption": 3,
+        "type": "medium"
+      },
+      {
+        "question": "Which of the following is a common regulatory requirement for operating medium drones?",
+        "options": [
+          "Drone must have a clear, identifiable registration number",
+          "The operator must have a medical certificate",
+          "The drone must be equipped with an auto-landing system",
+          "All of the above"
+        ],
+        "correctOption": 1,
+        "type": "medium"
+      },
+      {
+        "question": "What should a medium drone operator do if the drone enters a restricted area?",
+        "options": [
+          "Land the drone immediately",
+          "Contact the nearest air traffic control",
+          "Continue the flight with caution",
+          "Nothing, as drones are allowed in all airspace"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What is the main function of an ADS-B system in medium drones?",
+        "options": [
+          "To track drone position for safety",
+          "To automatically land the drone in emergencies",
+          "To control altitude and speed",
+          "To communicate with other aircraft"
+        ],
+        "correctOption": 1,
+        "type": "medium"
+      },
+      {
+        "question": "Which of the following is most critical in avoiding a collision during medium drone flight?",
+        "options": [
+          "Relying solely on autopilot",
+          "Maintaining visual line of sight",
+          "Flying at night",
+          "Using manual control for all maneuvers"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What is a required qualification for flying a medium drone?",
+        "options": [
+          "Remote Pilot Certificate",
+          "A medical certificate",
+          "Operator’s insurance",
+          "Only drone registration"
+        ],
+        "correctOption": 1,
+        "type": "medium"
+      },
+      {
+        "question": "What should a medium drone operator do if they lose GPS signal during a flight?",
+        "options": [
+          "Activate emergency landing",
+          "Switch to manual control and return home",
+          "Wait for GPS to reconnect",
+          "Continue the flight on autopilot"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What must medium drones comply with to operate legally for commercial purposes?",
+        "options": [
+          "Airworthiness certificate",
+          "Regular maintenance checks",
+          "A clear flight plan",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "Which type of mission would most likely require a medium drone?",
+        "options": [
+          "Aerial photography",
+          "Large-scale agricultural surveying",
+          "Package delivery",
+          "High-altitude environmental monitoring"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What is an important safety feature for medium drone operations?",
+        "options": [
+          "Dual control systems",
+          "Real-time weather updates",
+          "Geofencing capability",
+          "Automatic collision avoidance"
+        ],
+        "correctOption": 3,
+        "type": "medium"
+      },
+      {
+        "question": "How often should medium drones undergo maintenance checks?",
+        "options": [
+          "Every 10 hours of flight time",
+          "Every 50 hours of flight time",
+          "Every 100 hours of flight time",
+          "Every 6 months"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "What is required for a medium drone to operate at night?",
+        "options": [
+          "A special waiver from aviation authorities",
+          "An onboard lighting system visible from 3 miles away",
+          "Extra battery packs",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "In what kind of environment is flying a medium drone considered high-risk?",
+        "options": [
+          "Over rural farmland",
+          "In an area with unpredictable weather",
+          "In restricted airspace",
+          "At high altitudes"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      },
+      {
+        "question": "Which of the following is true about commercial use of medium drones?",
+        "options": [
+          "They can carry heavier payloads",
+          "They require additional pilot training",
+          "They are typically used for large-scale missions",
+          "All of the above"
+        ],
+        "correctOption": 4,
+        "type": "medium"
+      },
+      {
+        "question": "What is an essential pre-flight check for medium drones?",
+        "options": [
+          "Ensuring correct software version",
+          "Confirming a flight path and airspace clearance",
+          "Recharging the battery",
+          "Ensuring a stable GPS signal"
+        ],
+        "correctOption": 2,
+        "type": "medium"
+      }
+    ]
+  }
+  

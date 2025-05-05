@@ -1,104 +1,180 @@
 import mongoose from "mongoose";
-import Exam from "../../DB/exam.js";
-import StudentExamSubmission from "../../DB/SubmitExam.js";
+import QuestionSet from "../../DB/exam.js";
+import Submission from "../../DB/submission.js";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+import { generateAndSendCertificate } from "../../utils/sendEmail.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
 
 export const FetchExamQuestions = async (req, res) => {
   try {
-    const { examId } = req.params;
+    const dataPath = path.join(__dirname, "/data.json");
+    const fileContent = fs.readFileSync(dataPath, "utf-8");
+    const questionData = JSON.parse(fileContent);
+    const { type } = req.params;
 
-    if (!examId || !mongoose.Types.ObjectId.isValid(examId)) {
-      return res.status(400).json({ message: "Invalid or missing examId" });
+    if (!["micro", "small", "medium"].includes(type)) {
+      return res.status(400).json({ error: "Invalid type specified" });
     }
 
-    const examDetail = await Exam.findById(examId);
-
-    if (!examDetail) {
-      return res.status(404).json({ message: "Exam not found" });
+    if (!questionData || !questionData.questions) {
+      return res.status(404).json({ message: "No questions found." });
     }
 
-    return res.status(200).json({ message: "Exam Fetched", examDetail });
+    // Find the first (or latest) document
+    const filteredQuestions = questionData.questions.filter(
+      (q) => q.type.toLowerCase() === type
+    );
+
+    if (filteredQuestions.length === 0) {
+      return res.status(404).json({ message: `No ${type} questions found.` });
+    }
+    // Shuffle questions
+    const shuffledQuestions = shuffleArray(filteredQuestions);
+
+    res.json({ questions: shuffledQuestions });
   } catch (error) {
-    console.error("Error in FetchExamQuestions:", error);
-    return res.status(500).json({ message: "Internal Server Error", error });
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
   }
 };
 
 export const SubmitExam = async (req, res) => {
   try {
-    const { examId } = req.params;
-    const { studentId, answers } = req.body;
-    // const studentId = studentid;
+    const { candidateName,candidateEmail, droneType, answers } = req.body;
+    const dataPath = path.join(__dirname, "/data.json");
+    const fileContent = fs.readFileSync(dataPath, "utf-8");
+    const questionData = JSON.parse(fileContent);
 
-    console.log(examId, studentId, typeof answers);
-
-    if (!studentId || !examId || !Array.isArray(answers)) {
-      console.log(studentId, examId, answers);
-      return res.status(400).json({ message: "Invalid request body" });
+    if (!candidateName || !candidateEmail || !droneType || !Array.isArray(answers)) {
+      return res.status(400).json({ success: false, message: "Invalid data" });
     }
 
-    // Fetch the exam
-    const exam = await Exam.findById(examId);
-    if (!exam) {
-      return res.status(404).json({ message: "Exam not found" });
-    }
-
-    const questions = exam.questions;
-
-    // Validate answer count
-    if (questions.length !== answers.length) {
-      return res.status(400).json({
-        message: "Number of answers doesn't match number of questions",
-      });
-    }
-
-    // Calculate score
-    let correctCount = 0;
-    const answerDetail = questions.map((question, index) => {
-      const isCorrect = question.correctOption === answers[index];
-      if (isCorrect) correctCount++;
-      return {
-        question: question.question,
-        selectedOption: answers[index],
-        correctOption: question.correctOption,
-        isCorrect,
+    // Build a map: question -> correctOption + type
+    const questionMap = {};
+    questionData.questions.forEach((q) => {
+      questionMap[q.question] = {
+        correctOption: q.correctOption, // assuming you store correctOption number
+        options: q.options,
+        type: q.type,
       };
     });
 
-    console.log(
-      "studentId: ",
-      studentId,
-      "examId: ",
-      examId,
-      "answers: ",
-      answerDetail,
-      "score: ",
-      correctCount,
-      "totalQuestions: ",
-      questions.length
-    );
+    let totalQuestions = answers.length;
+    let correctAnswers = 0;
+    let totalTimeTaken = 0;
 
-    // Save submission
-    const submission = new StudentExamSubmission({
-      studentId,
-      examId,
-      answers: answerDetail,
-      score: correctCount,
-      totalQuestions: questions.length,
+    const processedAnswers = answers.map(({ question, answer, timeTaken }) => {
+      const questionInfo = questionMap[question];
+
+      if (!questionInfo) {
+        throw new Error(`Question not found: ${question}`);
+      }
+      console.log(questionInfo);
+
+      const isCorrect =
+        answer === questionInfo.options[questionInfo.correctOption - 1];
+      if (isCorrect) correctAnswers++;
+      totalTimeTaken += timeTaken || 0;
+
+      console.log("curr", questionInfo.options[questionInfo.correctOption - 1]);
+      return {
+        question: question,
+        selectedOption: answer,
+        correctOption: questionInfo.options[questionInfo.correctOption - 1],
+        type: questionInfo.type,
+        timeTaken: timeTaken || 0,
+      };
     });
 
-    await submission.save();
+    const score = Math.round((correctAnswers / totalQuestions) * 100);
 
-    console.log("submissions submitted");
+    const newSubmission = new Submission({
+      candidateName,
+      candidateEmail,
+      droneType,
+      answers: processedAnswers,
+      score,
+      totalTimeTaken,
+    });
+
+    await newSubmission.save();
+
+    generateAndSendCertificate({
+      email: candidateEmail,
+      name: candidateName,
+      completionDate: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+      course: `${droneType} exam`,
+    });
 
     return res.status(201).json({
-      message: "Exam submitted successfully",
-      result: {
-        score: correctCount,
-        totalQuestions: questions.length,
-      },
+      success: true,
+      submissionId: newSubmission._id,
+      score,
+      totalTimeTaken,
     });
   } catch (error) {
-    console.error("SubmitExam Error:", error);
-    return res.status(500).json({ message: "Internal Server Error", error });
+    console.error(error);
+    return res.status(500).json({ success: false, message: "Server Error" });
+  }
+};
+
+export const FetchAnalysis = async (req, res) => {
+  try {
+    const pipeline = [
+      {
+        $group: {
+          _id: "$droneType",
+          count: { $sum: 1 },
+          avgScore: { $avg: "$score" },
+          maxScore: { $max: "$score" },
+          minScore: { $min: "$score" },
+          passedCount: {
+            $sum: {
+              $cond: [{ $gte: ["$score", 3] }, 1, 0], // Passing if score >= 3
+            },
+          },
+        },
+      },
+      {
+        $project: {
+          name: "$_id",
+          count: 1,
+          passedCount: 1,
+          failedCount: { $subtract: ["$count", "$passedCount"] }, // 👈 New field
+          avgScore: { $round: ["$avgScore", 2] },
+          maxScore: 1,
+          minScore: 1,
+          passRate: {
+            $round: [
+              {
+                $multiply: [{ $divide: ["$passedCount", "$count"] }, 100],
+              },
+              2,
+            ],
+          },
+          _id: 0,
+        },
+      },
+      { $sort: { count: -1 } },
+    ];
+
+    const result = await Submission.aggregate(pipeline);
+
+    res.json(result);
+  } catch (error) {
+    console.error("Drone type analytics error:", error);
+    res.status(500).json({ error: "Server error while analyzing data" });
   }
 };

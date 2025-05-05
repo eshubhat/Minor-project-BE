@@ -1,9 +1,15 @@
 import e from "express";
-import { FetchExamQuestions, SubmitExam } from "../controller/Student/Exam.js";
+import {
+  FetchAnalysis,
+  FetchExamQuestions,
+  SubmitExam,
+} from "../controller/Student/Exam.js";
 
 const router = e.Router();
 
-router.get("/getExam/:examId", FetchExamQuestions);
-router.post("/submitExam/:examId", SubmitExam);
+router.post("/getExam/:type", FetchExamQuestions);
+// router.post("/submitExam/:examId", SubmitExam);
+router.post("/submitExam", SubmitExam);
+router.get("/analytics/drone-types", FetchAnalysis);
 
 export default router;

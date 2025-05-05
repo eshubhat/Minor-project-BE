@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  background: #f0f4f8;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.certificate-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.certificate-container {
+  background: white;
+  width: 1000px;
+  max-width: 90%;
+  padding: 3rem;
+  text-align: center;
+  border: 2px solid #0a5c95;
+  border-radius: 8px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.top-logo {
+  width: 200px;
+}
+
+.certificate-title {
+  color: #007dc4;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.certificate-text {
+  font-size: 1.2rem;
+  color: #444;
+  margin: 0.8rem 0;
+}
+
+.recipient-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #007dc4;
+  margin: 1rem 0;
+}
+
+.course-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #007dc4;
+  margin: 0.5rem 0;
+}
+
+.bottom-section {
+  margin-top: 3rem;
+  display: flex;
+  width: 120%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qr-section, .signature-section {
+  flex: 1;
+  text-align: center;
+}
+
+.qr-section {
+  text-align: left;
+}
+
+.qr-code-img {
+  width: 120px;
+  height: 120px;
+}
+
+.signature-line {
+  width: 200px;
+  height: 2px;
+  background: #007dc4;
+  margin: 0 auto;
+}
+
+.signature-name {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.congrats-text {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  color: #fd4757;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.edit-form {
+  margin-top: 2rem;
+  background: white;
+  padding: 2rem;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.edit-form h3 {
+  text-align: center;
+  color: #007dc4;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.print-button {
+  background: #007dc4;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.print-button:hover {
+  background: #063d6b;
+}
+
+/* Printing Style */
+@media print {
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .certificate-wrapper {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .edit-form {
+    display: none;
+  }
+
+  .certificate-container {
+    width: 800px;
+    height: auto;
+    box-shadow: none;
+    border: none;
+  }
+}

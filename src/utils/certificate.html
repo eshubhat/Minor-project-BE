@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Operator Certificate</title>
+  <link rel="stylesheet" href="./DroneStyles.css">
+</head>
+
+<body>
+  <div class="certificate-wrapper">
+    <div class="certificate-container">
+      <!-- Top Logo -->
+      <img src="./infosysLogo.png" alt="Logo" class="top-logo" width="500" height="100" >
+
+      <!-- Certificate Heading -->
+      <h2 class="certificate-title">COURSE COMPLETION CERTIFICATE</h2>
+
+      <!-- Main Content -->
+      <p class="certificate-text">This certificate is awarded to</p>
+      <h1 class="recipient-name">{{name}}</h1>
+      <p class="certificate-text">for successfully completing the course</p>
+      <h3 class="course-title" style="color: #007dc4;font-weight: bold;">{{course}}</h3>
+      <p class="certificate-text">on {{completionDate}}</p>
+
+      <p class="congrats-text">Congratulations! You make us proud!</p>
+
+      <!-- Bottom QR and Signature -->
+      <div class="bottom-section">
+        <div class="qr-section">
+          <img src="{{qrCodeUrl}}" alt="QR Code" class="qr-code-img">
+        </div>
+        <div class="signature-section">
+          <div class="signature-line"></div>
+          <p class="signature-name">Authorized Signatory</p>
+        </div>
+      </div>
+
+      <!-- Congratulations Text -->
+      
+    </div>
+  </div>
+</body>
+
+</html>
