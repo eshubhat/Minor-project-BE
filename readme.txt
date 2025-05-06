@@ -1,0 +1,1 @@
+Schema structure is present in src/DB.
