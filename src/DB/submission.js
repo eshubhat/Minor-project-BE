@@ -18,9 +18,8 @@ const answerSchema = new mongoose.Schema({
     required: true,
   },
   timeTaken: {
-    // NEW FIELD
     type: Number,
-    required: true, // make it required to always track timing
+    required: true, 
   },
 });
 
@@ -46,17 +45,13 @@ const submissionSchema = new mongoose.Schema({
     required: true,
   },
   totalTimeTaken: {
-    // NEW FIELD
     type: Number,
     required: true,
   },
   submittedAt: {
     type: Date,
     default: Date.now,
-  },
-  telemetryData: {
-    type: String,
-  },
+  }
 });
 
 const Submission = mongoose.model("Submission", submissionSchema);
