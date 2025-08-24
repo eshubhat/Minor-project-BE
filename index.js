@@ -5,9 +5,11 @@ import cors from "cors";
 const PORT = process.env.PORT || 3000;
 import TeacherRoutes from "./src/routes/TeacherRoutes.js";
 import StudetRoutes from "./src/routes/StudentRoutes.js";
+import dotenv from "dotenv";
 
 app.use(e.json());
 app.use(cors());
+dotenv.config();
 
 app.use("/teacher", TeacherRoutes);
 app.use("/student", StudetRoutes);

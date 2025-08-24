@@ -1,5 +1,6 @@
 import mongoose, { Types } from "mongoose";
 import Exam from "../../DB/exam.js";
+import Submission from "../../DB/submission.js";
 
 export const CreateExam = async (req, res) => {
   try {
@@ -37,4 +38,20 @@ export const FetchExamDetails = async (req, res) => {
     const examDetail =
       (await Exam.findById(examId)) || Exam.findById(examIdObject);
   } catch (error) {}
+};
+
+
+export const FetchExamSubmissions = async (req, res) => {
+  try {
+    const submissions = await Submission.find().sort({ submittedAt: -1 });
+
+    if (!submissions || submissions.length === 0) {
+      return res.status(404).json({ message: "No submissions found." });
+    }
+
+    res.status(200).json(submissions);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
 };

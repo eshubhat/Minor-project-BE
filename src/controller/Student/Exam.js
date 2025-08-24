@@ -48,12 +48,17 @@ export const FetchExamQuestions = async (req, res) => {
 
 export const SubmitExam = async (req, res) => {
   try {
-    const { candidateName,candidateEmail, droneType, answers } = req.body;
+    const { candidateName, candidateEmail, droneType, answers } = req.body;
     const dataPath = path.join(__dirname, "/data.json");
     const fileContent = fs.readFileSync(dataPath, "utf-8");
     const questionData = JSON.parse(fileContent);
 
-    if (!candidateName || !candidateEmail || !droneType || !Array.isArray(answers)) {
+    if (
+      !candidateName ||
+      !candidateEmail ||
+      !droneType ||
+      !Array.isArray(answers)
+    ) {
       return res.status(400).json({ success: false, message: "Invalid data" });
     }
 
@@ -107,16 +112,18 @@ export const SubmitExam = async (req, res) => {
 
     await newSubmission.save();
 
-    generateAndSendCertificate({
-      email: candidateEmail,
-      name: candidateName,
-      completionDate: new Date().toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
-      course: `${droneType} exam`,
-    });
+    if (score > 30) {
+      generateAndSendCertificate({
+        email: candidateEmail,
+        name: candidateName,
+        completionDate: new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
+        course: `${droneType} exam`,
+      });
+    }
 
     return res.status(201).json({
       success: true,
@@ -152,7 +159,7 @@ export const FetchAnalysis = async (req, res) => {
           name: "$_id",
           count: 1,
           passedCount: 1,
-          failedCount: { $subtract: ["$count", "$passedCount"] }, // 👈 New field
+          failedCount: { $subtract: ["$count", "$passedCount"] },
           avgScore: { $round: ["$avgScore", 2] },
           maxScore: 1,
           minScore: 1,
@@ -171,6 +178,8 @@ export const FetchAnalysis = async (req, res) => {
     ];
 
     const result = await Submission.aggregate(pipeline);
+
+    console.log("Drone type analytics result:", result);
 
     res.json(result);
   } catch (error) {
