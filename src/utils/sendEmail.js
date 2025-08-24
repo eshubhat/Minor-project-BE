@@ -101,14 +101,14 @@ async function sendCertificateEmail(email, name, pdfPath) {
     // Example:
     service: 'gmail',
     auth: {
-      user: '01fe22bcs129@kletech.ac.in',
-      pass: 'mkms wlno jfss afdb'
+      user: 'eshubhat03@gmail.com',
+      pass: 'shtt qlkm bzsr ntcx'
     }
   });
   
   // Email options
   const mailOptions = {
-    from: '"Drone Certification" 01fe22bcs129@gmail.com',
+    from: '"Drone Certification" eshubhat03@gmail.com',
     to: email,
     subject: 'Your Drone Operator Certificate',
     text: `Dear ${name},\n\nCongratulations on completing your drone operator certification! Please find your certificate attached to this email.\n\nBest regards,\nThe Drone Certification Team`,

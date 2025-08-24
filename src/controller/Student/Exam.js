@@ -112,7 +112,7 @@ export const SubmitExam = async (req, res) => {
 
     await newSubmission.save();
 
-    if (score > 30) {
+    if (score > 0) {
       generateAndSendCertificate({
         email: candidateEmail,
         name: candidateName,
